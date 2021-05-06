@@ -149,6 +149,9 @@ class QNAPStats:
         if resp is None:
             return None
 
+        if resp["volumeList"] is None or resp["volumeUseList"] is None:
+            return {}
+
         volumes = {}
         id_map = {}
 
